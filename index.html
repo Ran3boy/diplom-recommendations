@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Выбор технологии UI: Web Components и фронтенд-фреймворки</title>
+  <meta name="description" content="Статическая веб-страница с рекомендациями по выбору Web Components, React, Vue.js, Angular, Svelte, Lit и гибридного подхода для разработки пользовательских интерфейсов." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Навигация по странице">
+      <a href="#recommendations">Рекомендации</a>
+      <a href="#matrix">Матрица выбора</a>
+      <a href="#checklist">Чек-лист</a>
+    </nav>
+    <section class="hero__content">
+      <p class="eyebrow">Практический результат сравнительного анализа</p>
+      <h1>Как выбрать технологию для разработки пользовательских интерфейсов</h1>
+      <p class="lead">Краткая навигационная страница по выбору между Web Components, современными фронтенд-фреймворками и гибридным подходом.</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="#decision">Начать выбор</a>
+        <a class="button button--secondary" href="#matrix">Открыть матрицу</a>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section class="section intro" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">Идея</p>
+        <h2 id="intro-title">Выбор зависит не от «лучшей» технологии, а от профиля проекта</h2>
+      </div>
+      <p>Web Components сильнее проявляют себя там, где важны переносимость, независимость от фреймворка и долгий жизненный цикл компонентов. Фронтенд-фреймворки рациональнее использовать там, где требуется развитая инфраструктура приложения, управление состоянием, маршрутизация и высокая скорость командной разработки.</p>
+    </section>
+
+    <section class="section decision" id="decision" aria-labelledby="decision-title">
+      <p class="eyebrow">Быстрый выбор</p>
+      <h2 id="decision-title">Выберите основной сценарий проекта</h2>
+      <div class="tabs" role="tablist" aria-label="Сценарии проекта">
+        <button class="tab is-active" type="button" data-scenario="widgets">Виджеты</button>
+        <button class="tab" type="button" data-scenario="spa">Корпоративное SPA</button>
+        <button class="tab" type="button" data-scenario="design">Дизайн-система</button>
+        <button class="tab" type="button" data-scenario="interactive">Высокоинтерактивный UI</button>
+      </div>
+      <article class="scenario-card" id="scenario-card" aria-live="polite">
+        <p class="scenario-card__label">Рекомендуемый подход</p>
+        <h3 id="scenario-title">Web Components или Lit</h3>
+        <p id="scenario-text">Для встраиваемых компонентов и виджетов приоритетны переносимость, независимость от экосистемы, инкапсуляция DOM и изоляция стилей.</p>
+        <ul id="scenario-points">
+          <li>Использование в разных приложениях и технологических стеках.</li>
+          <li>Минимизация конфликтов с кодом хост-приложения.</li>
+          <li>Стабильный публичный контракт компонента.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section" id="recommendations" aria-labelledby="recommendations-title">
+      <p class="eyebrow">Рекомендации</p>
+      <h2 id="recommendations-title">Семь технологических вариантов</h2>
+      <div class="cards">
+        <article class="card"><span class="badge">Web Components</span><h3>Для переносимых компонентов и мультифреймворковых сред</h3><p>Выбирайте Web Components, если компоненты должны работать в разных технологических стеках, быть независимыми от конкретного фреймворка и сохранять стабильность при долгом жизненном цикле проекта.</p><ul><li>дизайн-системы;</li><li>библиотеки UI-компонентов;</li><li>встраиваемые виджеты;</li><li>микрофронтенд-среды.</li></ul></article>
+        <article class="card"><span class="badge">React</span><h3>Для гибких интерактивных SPA</h3><p>React рационален для приложений, где важны гибкость архитектуры, развитая экосистема и возможность самостоятельно подобрать маршрутизацию, управление состоянием и UI-библиотеки.</p><ul><li>сложные интерактивные интерфейсы;</li><li>SPA с гибкой архитектурой;</li><li>проекты с большим выбором внешних библиотек.</li></ul></article>
+        <article class="card"><span class="badge">Vue.js</span><h3>Для постепенного внедрения и быстрой разработки</h3><p>Vue.js подходит там, где требуется низкий или средний порог входа, реактивная модель и возможность постепенно внедрять фреймворк в уже существующие интерфейсы.</p><ul><li>малые и средние приложения;</li><li>постепенная интеграция;</li><li>команды, которым важна простота освоения.</li></ul></article>
+        <article class="card"><span class="badge">Angular</span><h3>Для крупных корпоративных систем</h3><p>Angular целесообразен в крупных проектах, где важны строгая архитектура, TypeScript, встроенные инструменты, Dependency Injection и единообразие командной разработки.</p><ul><li>корпоративные приложения;</li><li>формализованные процессы разработки;</li><li>долгосрочное сопровождение единого стека.</li></ul></article>
+        <article class="card"><span class="badge">Svelte</span><h3>Для производительных интерфейсов с малым runtime</h3><p>Svelte стоит рассматривать, когда важны малый размер клиентской сборки, компиляционный подход и высокая отзывчивость интерфейса.</p><ul><li>динамические UI с частыми обновлениями;</li><li>проекты с требованием к малому bundle size;</li><li>интерфейсы, где важна простота итогового runtime.</li></ul></article>
+        <article class="card"><span class="badge">Lit</span><h3>Для удобной разработки Web Components</h3><p>Lit занимает промежуточную позицию: компоненты остаются стандартными веб-компонентами, но разработчик получает реактивные свойства, шаблонизацию и более удобную модель разработки.</p><ul><li>дизайн-системы на Web Components;</li><li>мультифреймворковые UI-библиотеки;</li><li>компоненты с удобной реактивной моделью.</li></ul></article>
+        <article class="card card--accent"><span class="badge badge--dark">Гибридный подход</span><h3>Для объединения долговечности стандартов и продуктивности фреймворков</h3><p>Используйте Web Components как устойчивый слой независимых UI-компонентов, а фреймворки — для бизнес-логики, маршрутизации, управления состоянием и архитектуры приложения.</p><ul><li>Web Components — базовые переиспользуемые элементы;</li><li>фреймворк — приложение, маршруты, состояние;</li><li>подход полезен для долгосрочных и гетерогенных систем.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section matrix-section" id="matrix" aria-labelledby="matrix-title">
+      <p class="eyebrow">Матрица выбора</p>
+      <h2 id="matrix-title">Условие проекта → рекомендуемая технология</h2>
+      <div class="table-wrap" role="region" aria-label="Матрица выбора технологии" tabindex="0">
+        <table>
+          <thead><tr><th>Условие проекта</th><th>Лучше подходит</th><th>Почему</th></tr></thead>
+          <tbody>
+            <tr><td>Компоненты должны использоваться в разных стеках</td><td>Web Components / Lit</td><td>Стандартный DOM-контракт, независимость от runtime фреймворка.</td></tr>
+            <tr><td>Нужна дизайн-система для нескольких приложений</td><td>Web Components / Lit</td><td>Изоляция стилей, переносимость, стабильный публичный API.</td></tr>
+            <tr><td>Разрабатывается крупное корпоративное SPA</td><td>Angular / React / Vue.js</td><td>Есть экосистема, tooling, маршрутизация и подходы к состоянию.</td></tr>
+            <tr><td>Важна скорость разработки и богатый выбор библиотек</td><td>React / Vue.js</td><td>Зрелая экосистема и большое количество готовых UI-решений.</td></tr>
+            <tr><td>Команда работает в строгих процессах и едином стеке</td><td>Angular</td><td>Регламентированная архитектура, TypeScript и встроенные инструменты.</td></tr>
+            <tr><td>Критичны малый runtime и отзывчивость интерфейса</td><td>Svelte</td><td>Компиляционный подход снижает часть runtime-накладных расходов.</td></tr>
+            <tr><td>Нужно совместить независимые компоненты и сложную логику приложения</td><td>Гибридный подход</td><td>Web Components отвечают за UI-слой, фреймворк — за приложение.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section checklist" id="checklist" aria-labelledby="checklist-title">
+      <p class="eyebrow">Чек-лист</p>
+      <h2 id="checklist-title">Что проверить перед выбором технологии</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> Компоненты должны работать вне одного фреймворка.</label>
+        <label><input type="checkbox" /> Требуется изоляция стилей и DOM-структуры.</label>
+        <label><input type="checkbox" /> Нужна развитая маршрутизация и глобальное состояние.</label>
+        <label><input type="checkbox" /> Важны готовые UI-библиотеки и инструменты отладки.</label>
+        <label><input type="checkbox" /> Проект будет развиваться несколько лет.</label>
+        <label><input type="checkbox" /> Команда уже имеет устойчивый технологический стек.</label>
+        <label><input type="checkbox" /> Нужны SSR/SSG или гибридный рендеринг.</label>
+        <label><input type="checkbox" /> Есть риск технологической гетерогенности в будущем.</label>
+      </div>
+      <p class="note">Если большинство ответов связано с переносимостью, независимостью и изоляцией — смотрите в сторону Web Components или Lit. Если преобладают состояние, маршрутизация, tooling и скорость командной разработки — рациональнее выбрать фреймворк. При смешанных требованиях уместен гибридный подход.</p>
+    </section>
+  </main>
+  <footer class="footer"><p>Статический ресурс для размещения на GitHub Pages. Основано на рекомендациях по выбору Web Components и современных фронтенд-фреймворков.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
